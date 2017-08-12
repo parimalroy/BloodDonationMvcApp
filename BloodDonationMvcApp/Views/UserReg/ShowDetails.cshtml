@@ -1,0 +1,82 @@
+﻿@model BloodDonationMvcApp.Models.UserReg
+
+@{
+    ViewBag.Title = "ShowDetails";
+}
+
+<h2>ShowDetails</h2>
+
+<div>
+    <h4>UserReg</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Blood.BloodName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blood.BloodName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Districts.DistrictsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Districts.DistrictsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Division.DivisionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Division.DivisionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+    </dl>
+</div>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

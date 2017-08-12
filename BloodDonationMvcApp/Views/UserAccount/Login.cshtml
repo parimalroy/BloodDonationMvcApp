@@ -1,0 +1,54 @@
+﻿@model BloodDonationMvcApp.Models.UserAccount
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <form class="form-horizontal" role="form">
+        <div class="form-horizontal col-lg-6">
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "User Name" })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password" })
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="LogIn" class="btn btn-primary btn-lg" />
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="form-group col-lg-6">
+            <br /><br />
+            <font color="Red"><h5>*** This Login Only For Admin</h5></font>  
+            <font color="Red"><h5>*** If you are a User Please Don't Try to Login</h5></font>
+            <font color="Red"><h5>*** Please Enter Youre Correct User Name and Password</h5></font>  
+        </div>
+        
+        </form>
+   
+}
+
+<div>
+   @* @Html.ActionLink("Back to List", "Index")*@
+</div>

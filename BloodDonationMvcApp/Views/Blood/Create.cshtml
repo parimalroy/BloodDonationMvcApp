@@ -1,0 +1,147 @@
+﻿@model BloodDonationMvcApp.Models.BloodGroups
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h2>Create</h2>*@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/css/business-casual.css" rel="stylesheet" />
+        <title>Business Casual - Start Bootstrap Theme</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="~/Content/img/sub_banner.jpg" />
+                            </div>
+                            <div class="item">
+                                <img src="~/Content/img/webhero-blooddonor.jpg" />
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Content/img/o-BLOOD-DONATION-MAN-facebook.jpg" />
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small>Welcome to</small>
+                    </h2>
+                    <h1 class="brand-name">Blood Donation Home</h1>
+                    <hr class="tagline-divider" />
+                    <h2>
+                        <small>
+                            call us :
+                            <strong>01737620970 , 01920268974</strong>
+                        </small>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-6">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <form class="form-horizontal" role="form">
+                        <div class="form-horizontal">
+                            <h4>BloodGroups</h4><br />
+
+                            @Html.ValidationSummary(true)
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.BloodName, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(model => model.BloodName, new { @class = "form-control", placeholder = "Blood Group" })
+                                    @Html.ValidationMessageFor(model => model.BloodName)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
+                                </div>
+                            </div>
+                        </div> 
+                            </form>                     
+                    }
+                    </div>
+                <div class="col-lg-6">
+                    <hr class="visible-xs" />
+                    <h3> Most people can give blood. You can give blood if you</h3><br /><br />
+                    *** are fit and healthy<br />
+                    *** weigh over 7 stone 12 lbs or 50kg<br />
+                    *** are aged between 17 and 66 (or 70 if you have given blood before<br />
+                    *** are over 70 and have given blood in the last two years<br /><br />Men can give blood every 3 months and women can give blood every 4 months.
+                    <br /><br />
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; blooddonation.org.bd</p>@Html.ActionLink("Home", "LoginHome", "UserAccount")
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    @* <script src="../js/jquery.js"></script>*@
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    @*<script src="../js/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+</body>
+</html>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
